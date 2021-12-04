@@ -10,10 +10,6 @@ class Submarine
   end
 
   def move(instruction)
-
-  end
-
-  def move(instruction)
     command, units = instruction.split(' ')
 
     return unless VALID_COMMANDS.include?(command)
