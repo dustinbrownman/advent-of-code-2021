@@ -1,6 +1,7 @@
 class Submarine
-  attr_reader :depth, :position
   VALID_COMMANDS = %w(forward down up).freeze
+
+  attr_reader :depth, :position
 
   def initialize(depth: 0, position: 0, aim: 0)
     @depth = depth
