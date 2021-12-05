@@ -19,6 +19,16 @@ class BingoBoard
   end
 
   def bingo?
+    bingo_by_row? || bingo_by_column?
+  end
+
+  private
+
+  def bingo_by_row?
     @board.any? { |row| row.all? { |cell| cell == "X" } }
+  end
+
+  def bingo_by_column?
+    @board.transpose.any? { |row| row.all? { |cell| cell == "X" } }
   end
 end
