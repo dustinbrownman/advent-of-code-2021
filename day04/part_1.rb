@@ -21,11 +21,6 @@ input[1..-1].each do |line|
   current_board << line.split(" ").map(&:to_i)
 end
 
-boards.each do |board|
-  puts board
-  puts "---"
-end
-
 numbers.each do |number|
   boards.each do |board|
     board.mark(number)
@@ -37,6 +32,8 @@ numbers.each do |number|
     puts "We have a winner!"
     puts winner
     puts "won with #{number}"
+
+    puts "Solution: #{number * winner.remaining_sum}"
     break
   end
 end
