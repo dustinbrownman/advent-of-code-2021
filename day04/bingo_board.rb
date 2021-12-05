@@ -22,6 +22,12 @@ class BingoBoard
     bingo_by_row? || bingo_by_column?
   end
 
+  def to_s
+    @board.map do |row|
+      row.map { |cell| cell.to_s.rjust(2) }.join(" ")
+    end.join("\n")
+  end
+
   private
 
   def bingo_by_row?
