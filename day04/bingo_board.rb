@@ -22,6 +22,10 @@ class BingoBoard
     bingo_by_row? || bingo_by_column?
   end
 
+  def remaining_sum
+    @board.flatten.select { |cell| cell.is_a?(Integer) }.reduce(:+)
+  end
+
   def to_s
     @board.map do |row|
       row.map { |cell| cell.to_s.rjust(2) }.join(" ")

@@ -53,11 +53,22 @@ def test_bingo_by_complete_column
   board.bingo?
 end
 
+def test_sum_of_remaining_numbers
+  board = BingoBoard.new
+  board << [ 1,  2,  3,  4,  5] # 1 + 2 + 3 + 4 + 5  = 15
+  board << [ 6,  7,  8,  9, 10] # 6 + 7 + 8 + 9 + 10 + 15 = 55
+
+  board.mark(5) # 55 - 5 = 50
+
+  board.remaining_sum == 50
+end
+
 test_methods = [
   :test_marking_board,
   :test_marking_board_with_multiple_rows,
   :test_bingo_by_complete_row,
   :test_bingo_by_complete_column,
+  :test_sum_of_remaining_numbers,
 ]
 
 test_methods.each do |method|
