@@ -17,6 +17,8 @@ Once I had the board being parsed, I decided to create a class to encapsulate th
 
 I did run into a small issue where my parsing didn't work quite right (I was ignoring the first row of each card). I was able to see this by creating a `to_s` method to easily print out each card to see what it contained.
 
+Oh, special shout out to [GitHub Copilot](https://copilot.github.com/)! Because of it I learned a new Ruby method that made checking the horizontal points trivial: [`transpose`](https://apidock.com/ruby/v2_6_3/Array/transpose)!
+
 ## Part 2
 
 This is where using the class really shined. Even with the changed conditions, my class didn't have to change at all. I was able to just change the conditions for searching for winners in the script and found the solution.
